@@ -1,0 +1,315 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ascent Tea — Premium Japanese Matcha</title>
+  <meta name="description" content="Ceremonial-grade Japanese matcha in single-serve stick packs. Drop 01 coming soon.">
+  <meta property="og:title" content="Ascent Tea — Premium Japanese Matcha">
+  <meta property="og:description" content="Ceremonial-grade Japanese matcha in single-serve stick packs. Drop 01 coming soon.">
+  <meta property="og:image" content="https://ascenttea.com/hero.jpg">
+  <meta property="og:url" content="https://ascenttea.com">
+  <meta property="og:type" content="website">
+  <meta name="twitter:card" content="summary_large_image">
+  <link rel="icon" type="image/png" href="logo-dark.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --color-matcha: #2D5016;
+      --color-sage: #8B9E7C;
+      --color-cream: #FAF7F2;
+      --color-cream-dark: #F0EBE3;
+      --color-charcoal: #2C2C2C;
+      --color-gold: #C4A265;
+      --font-heading: 'Cormorant Garamond', 'Palatino', serif;
+      --font-body: 'Inter', 'Helvetica Neue', sans-serif;
+    }
+
+    html, body {
+      height: 100%;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      font-family: var(--font-body);
+      color: var(--color-cream);
+      overflow: hidden;
+    }
+
+    /* ---- Full-screen hero background ---- */
+    .hero {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+    }
+
+    .hero img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 40%;
+    }
+
+    .hero-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to bottom,
+        rgba(20, 30, 10, 0.55) 0%,
+        rgba(20, 30, 10, 0.40) 40%,
+        rgba(20, 30, 10, 0.65) 100%
+      );
+    }
+
+    /* ---- Content ---- */
+    .content {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      min-height: 100dvh;
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .logo {
+      width: clamp(180px, 28vw, 320px);
+      margin-bottom: 2.5rem;
+      filter: drop-shadow(0 2px 12px rgba(0,0,0,0.3));
+      animation: fadeDown 1s ease-out both;
+    }
+
+    .divider {
+      width: 48px;
+      height: 1px;
+      background: var(--color-gold);
+      margin-bottom: 2rem;
+      animation: fadeIn 1s 0.3s ease-out both;
+    }
+
+    .tagline {
+      font-family: var(--font-heading);
+      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
+      font-weight: 300;
+      font-style: italic;
+      letter-spacing: 0.04em;
+      color: rgba(250, 247, 242, 0.85);
+      margin-bottom: 0.75rem;
+      animation: fadeIn 1s 0.4s ease-out both;
+    }
+
+    .flavors {
+      font-family: var(--font-body);
+      font-size: clamp(0.7rem, 1.4vw, 0.85rem);
+      font-weight: 400;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--color-gold);
+      margin-bottom: 3rem;
+      animation: fadeIn 1s 0.6s ease-out both;
+    }
+
+    .coming-soon {
+      font-family: var(--font-heading);
+      font-size: clamp(2.2rem, 6vw, 4.5rem);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      line-height: 1.1;
+      margin-bottom: 1rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+      animation: fadeUp 1s 0.2s ease-out both;
+    }
+
+    .drop-label {
+      font-family: var(--font-body);
+      font-size: clamp(0.65rem, 1.2vw, 0.8rem);
+      font-weight: 400;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: rgba(250, 247, 242, 0.6);
+      margin-bottom: 3rem;
+      animation: fadeIn 1s 0.8s ease-out both;
+    }
+
+    /* ---- Email signup ---- */
+    .signup {
+      display: flex;
+      gap: 0;
+      max-width: 440px;
+      width: 100%;
+      animation: fadeUp 1s 1s ease-out both;
+    }
+
+    .signup input {
+      flex: 1;
+      padding: 0.85rem 1.2rem;
+      font-family: var(--font-body);
+      font-size: 0.85rem;
+      letter-spacing: 0.02em;
+      color: var(--color-charcoal);
+      background: rgba(255, 255, 255, 0.95);
+      border: 1px solid rgba(255, 255, 255, 0.3);
+      border-right: none;
+      border-radius: 2px 0 0 2px;
+      outline: none;
+      transition: background 0.3s ease;
+    }
+
+    .signup input::placeholder {
+      color: #999;
+      letter-spacing: 0.04em;
+    }
+
+    .signup input:focus {
+      background: #fff;
+    }
+
+    .signup button {
+      padding: 0.85rem 1.8rem;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--color-cream);
+      background: var(--color-charcoal);
+      border: 1px solid var(--color-charcoal);
+      border-radius: 0 2px 2px 0;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      white-space: nowrap;
+    }
+
+    .signup button:hover {
+      background: var(--color-matcha);
+      border-color: var(--color-matcha);
+    }
+
+    .signup-note {
+      font-size: 0.7rem;
+      color: rgba(250, 247, 242, 0.45);
+      margin-top: 0.75rem;
+      letter-spacing: 0.02em;
+      animation: fadeIn 1s 1.2s ease-out both;
+    }
+
+    /* ---- Instagram link ---- */
+    .social {
+      position: fixed;
+      bottom: 2rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+      animation: fadeIn 1s 1.4s ease-out both;
+    }
+
+    .social a {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(250, 247, 242, 0.6);
+      text-decoration: none;
+      font-family: var(--font-body);
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      transition: color 0.3s ease;
+    }
+
+    .social a:hover {
+      color: var(--color-cream);
+    }
+
+    .social svg {
+      width: 16px;
+      height: 16px;
+      fill: currentColor;
+    }
+
+    /* ---- Animations ---- */
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes fadeDown {
+      from { opacity: 0; transform: translateY(-16px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---- Mobile ---- */
+    @media (max-width: 520px) {
+      .signup {
+        flex-direction: column;
+        gap: 0;
+      }
+      .signup input {
+        border-right: 1px solid rgba(255, 255, 255, 0.3);
+        border-radius: 2px 2px 0 0;
+        border-bottom: none;
+      }
+      .signup button {
+        border-radius: 0 0 2px 2px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="hero">
+    <img src="hero.jpg" alt="Japanese tea fields at sunrise with misty mountains">
+    <div class="hero-overlay"></div>
+  </div>
+
+  <main class="content">
+    <img src="logo.png" alt="Ascent Tea" class="logo">
+    <div class="divider"></div>
+    <p class="tagline">Ceremonial-grade Japanese matcha, reimagined</p>
+    <p class="flavors">Kinako · Kuromitsu · Matcha</p>
+    <h1 class="coming-soon">Coming Soon</h1>
+    <p class="drop-label">Drop 01 · Limited to 200 kits</p>
+    <form class="signup" action="#" onsubmit="return handleSignup(event)">
+      <input type="email" name="email" placeholder="Enter your email" required autocomplete="email">
+      <button type="submit">Notify Me</button>
+    </form>
+    <p class="signup-note">Be first to know when we launch. No spam, ever.</p>
+  </main>
+
+  <div class="social">
+    <a href="https://instagram.com/ascent_tea" target="_blank" rel="noopener">
+      <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
+      </svg>
+      @ascent_tea
+    </a>
+  </div>
+
+  <script>
+    function handleSignup(e) {
+      e.preventDefault();
+      const input = e.target.querySelector('input');
+      const button = e.target.querySelector('button');
+      const email = input.value;
+      // For now, just show confirmation. Wire up to Mailchimp/ConvertKit later.
+      button.textContent = 'Added';
+      button.style.background = '#2D5016';
+      button.style.borderColor = '#2D5016';
+      input.disabled = true;
+      button.disabled = true;
+      console.log('Signup:', email);
+    }
+  </script>
+
+</body>
+</html>
