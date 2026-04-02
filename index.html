@@ -11,7 +11,7 @@
   <meta property="og:url" content="https://ascenttea.com">
   <meta property="og:type" content="website">
   <meta name="twitter:card" content="summary_large_image">
-  <link rel="icon" type="image/png" href="logo-dark.png">
+  <link rel="icon" type="image/png" href="favicon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
@@ -36,7 +36,7 @@
 
     body {
       font-family: var(--font-body);
-      color: var(--color-cream);
+      color: var(--color-charcoal);
       overflow: hidden;
     }
 
@@ -59,9 +59,10 @@
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(20, 30, 10, 0.55) 0%,
-        rgba(20, 30, 10, 0.40) 40%,
-        rgba(20, 30, 10, 0.65) 100%
+        rgba(255, 255, 255, 0.15) 0%,
+        rgba(255, 255, 255, 0.25) 40%,
+        rgba(255, 255, 255, 0.15) 70%,
+        rgba(0, 0, 0, 0.1) 100%
       );
     }
 
@@ -77,65 +78,77 @@
       min-height: 100dvh;
       padding: 2rem;
       text-align: center;
+      user-select: none;
     }
 
     .logo {
-      width: clamp(180px, 28vw, 320px);
-      margin-bottom: 2.5rem;
-      filter: drop-shadow(0 2px 12px rgba(0,0,0,0.3));
+      width: clamp(280px, 40vw, 500px);
+      height: auto;
+      margin-bottom: 2rem;
+      filter: drop-shadow(0 1px 4px rgba(255, 255, 255, 0.4));
       animation: fadeDown 1s ease-out both;
     }
 
-    .divider {
-      width: 48px;
-      height: 1px;
-      background: var(--color-gold);
-      margin-bottom: 2rem;
+    .subtitle {
+      font-family: var(--font-body);
+      font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: rgba(35, 35, 25, 0.85);
+      margin-bottom: 0.4rem;
+      text-shadow: 0 1px 4px rgba(255, 255, 255, 0.5);
       animation: fadeIn 1s 0.3s ease-out both;
-    }
-
-    .tagline {
-      font-family: var(--font-heading);
-      font-size: clamp(1.1rem, 2.5vw, 1.5rem);
-      font-weight: 300;
-      font-style: italic;
-      letter-spacing: 0.04em;
-      color: rgba(250, 247, 242, 0.85);
-      margin-bottom: 0.75rem;
-      animation: fadeIn 1s 0.4s ease-out both;
     }
 
     .flavors {
       font-family: var(--font-body);
-      font-size: clamp(0.7rem, 1.4vw, 0.85rem);
-      font-weight: 400;
-      letter-spacing: 0.25em;
+      font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+      font-weight: 300;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--color-gold);
-      margin-bottom: 3rem;
-      animation: fadeIn 1s 0.6s ease-out both;
+      color: rgba(35, 35, 25, 0.7);
+      margin-bottom: 2.5rem;
+      text-shadow: 0 1px 4px rgba(255, 255, 255, 0.5);
+      animation: fadeIn 1s 0.5s ease-out both;
     }
 
     .coming-soon {
       font-family: var(--font-heading);
-      font-size: clamp(2.2rem, 6vw, 4.5rem);
+      font-size: clamp(2.4rem, 6vw, 4.5rem);
       font-weight: 300;
       letter-spacing: 0.06em;
       line-height: 1.1;
-      margin-bottom: 1rem;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+      color: var(--color-charcoal);
+      margin-bottom: 1.25rem;
+      text-shadow: 0 1px 6px rgba(255, 255, 255, 0.5);
       animation: fadeUp 1s 0.2s ease-out both;
     }
 
     .drop-label {
       font-family: var(--font-body);
-      font-size: clamp(0.65rem, 1.2vw, 0.8rem);
-      font-weight: 400;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: rgba(250, 247, 242, 0.6);
-      margin-bottom: 3rem;
-      animation: fadeIn 1s 0.8s ease-out both;
+      font-size: 0.75rem;
+      font-weight: 500;
+      letter-spacing: 0.12em;
+      color: rgba(35, 35, 25, 0.88);
+      margin-bottom: 2.5rem;
+      position: relative;
+      background: linear-gradient(
+        160deg,
+        rgba(255, 255, 255, 0.55) 0%,
+        rgba(255, 255, 255, 0.18) 50%,
+        rgba(255, 255, 255, 0.30) 100%
+      );
+      backdrop-filter: blur(24px) saturate(1.8) brightness(1.08);
+      -webkit-backdrop-filter: blur(24px) saturate(1.8) brightness(1.08);
+      padding: 0.5rem 1.25rem;
+      border-radius: 2rem;
+      display: inline-block;
+      white-space: nowrap;
+      border: 0.5px solid rgba(255, 255, 255, 0.5);
+      border-top-color: rgba(255, 255, 255, 0.7);
+      border-left-color: rgba(255, 255, 255, 0.6);
+      animation: fadeIn 1s 0.7s ease-out both;
     }
 
     /* ---- Email signup ---- */
@@ -144,7 +157,7 @@
       gap: 0;
       max-width: 440px;
       width: 100%;
-      animation: fadeUp 1s 1s ease-out both;
+      animation: fadeUp 1s 0.9s ease-out both;
     }
 
     .signup input {
@@ -152,23 +165,26 @@
       padding: 0.85rem 1.2rem;
       font-family: var(--font-body);
       font-size: 0.85rem;
-      letter-spacing: 0.02em;
+      letter-spacing: 0.03em;
       color: var(--color-charcoal);
-      background: rgba(255, 255, 255, 0.95);
-      border: 1px solid rgba(255, 255, 255, 0.3);
+      background: rgba(255, 255, 255, 0.7);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border: 0.5px solid rgba(50, 50, 40, 0.12);
       border-right: none;
       border-radius: 2px 0 0 2px;
       outline: none;
-      transition: background 0.3s ease;
+      transition: all 0.3s ease;
     }
 
     .signup input::placeholder {
-      color: #999;
+      color: rgba(50, 50, 40, 0.38);
       letter-spacing: 0.04em;
     }
 
     .signup input:focus {
-      background: #fff;
+      background: rgba(255, 255, 255, 0.85);
+      border-color: rgba(50, 50, 40, 0.2);
     }
 
     .signup button {
@@ -194,10 +210,11 @@
 
     .signup-note {
       font-size: 0.7rem;
-      color: rgba(250, 247, 242, 0.45);
+      color: rgba(35, 35, 25, 0.5);
       margin-top: 0.75rem;
       letter-spacing: 0.02em;
-      animation: fadeIn 1s 1.2s ease-out both;
+      text-shadow: 0 1px 3px rgba(255, 255, 255, 0.4);
+      animation: fadeIn 1s 1.1s ease-out both;
     }
 
     /* ---- Instagram link ---- */
@@ -207,23 +224,24 @@
       left: 50%;
       transform: translateX(-50%);
       z-index: 2;
-      animation: fadeIn 1s 1.4s ease-out both;
+      animation: fadeIn 1s 1.3s ease-out both;
     }
 
     .social a {
       display: inline-flex;
       align-items: center;
       gap: 0.5rem;
-      color: rgba(250, 247, 242, 0.6);
+      color: rgba(35, 35, 25, 0.5);
       text-decoration: none;
       font-family: var(--font-body);
       font-size: 0.75rem;
       letter-spacing: 0.12em;
       transition: color 0.3s ease;
+      text-shadow: 0 1px 3px rgba(255, 255, 255, 0.4);
     }
 
     .social a:hover {
-      color: var(--color-cream);
+      color: var(--color-charcoal);
     }
 
     .social svg {
@@ -255,7 +273,7 @@
         gap: 0;
       }
       .signup input {
-        border-right: 1px solid rgba(255, 255, 255, 0.3);
+        border-right: 0.5px solid rgba(50, 50, 40, 0.12);
         border-radius: 2px 2px 0 0;
         border-bottom: none;
       }
@@ -273,15 +291,14 @@
   </div>
 
   <main class="content">
-    <img src="logo.png" alt="Ascent Tea" class="logo">
-    <div class="divider"></div>
-    <p class="tagline">Ceremonial-grade Japanese matcha, reimagined</p>
+    <img src="logo-dark.png" alt="Ascent Tea" class="logo">
+    <p class="subtitle">Drop 01</p>
     <p class="flavors">Kinako · Kuromitsu · Matcha</p>
     <h1 class="coming-soon">Coming Soon</h1>
-    <p class="drop-label">Drop 01 · Limited to 200 kits</p>
+    <p class="drop-label">Limited to 200 kits · Join our first drop</p>
     <form class="signup" action="#" onsubmit="return handleSignup(event)">
-      <input type="email" name="email" placeholder="Enter your email" required autocomplete="email">
-      <button type="submit">Notify Me</button>
+      <input type="email" name="email" placeholder="Your email address" required autocomplete="email">
+      <button type="submit">Join the First Drop</button>
     </form>
     <p class="signup-note">Be first to know when we launch. No spam, ever.</p>
   </main>
@@ -301,7 +318,6 @@
       const input = e.target.querySelector('input');
       const button = e.target.querySelector('button');
       const email = input.value;
-      // For now, just show confirmation. Wire up to Mailchimp/ConvertKit later.
       button.textContent = 'Added';
       button.style.background = '#2D5016';
       button.style.borderColor = '#2D5016';
