@@ -313,17 +313,60 @@
   </div>
 
   <script>
-    function handleSignup(e) {
+    const KLAVIYO_COMPANY_ID = 'Y8z2AN';
+    const KLAVIYO_LIST_ID = 'SWd8Re';
+
+    async function handleSignup(e) {
       e.preventDefault();
       const input = e.target.querySelector('input');
       const button = e.target.querySelector('button');
       const email = input.value;
-      button.textContent = 'Added';
-      button.style.background = '#2D5016';
-      button.style.borderColor = '#2D5016';
-      input.disabled = true;
+
+      button.textContent = 'Sending...';
       button.disabled = true;
-      console.log('Signup:', email);
+
+      try {
+        const res = await fetch('https://a.klaviyo.com/client/subscriptions/', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'revision': '2024-10-15'
+          },
+          body: JSON.stringify({
+            data: {
+              type: 'subscription',
+              attributes: {
+                custom_source: 'Coming Soon Page',
+                profile: {
+                  data: {
+                    type: 'profile',
+                    attributes: { email: email }
+                  }
+                }
+              },
+              relationships: {
+                list: {
+                  data: { type: 'list', id: KLAVIYO_LIST_ID }
+                }
+              }
+            }
+          })
+        });
+
+        if (res.ok || res.status === 202) {
+          button.textContent = 'You\'re In';
+          button.style.background = '#2D5016';
+          button.style.borderColor = '#2D5016';
+          input.disabled = true;
+        } else {
+          throw new Error('API error');
+        }
+      } catch (err) {
+        button.textContent = 'Try Again';
+        button.disabled = false;
+        button.style.background = '#8B4513';
+        button.style.borderColor = '#8B4513';
+      }
     }
   </script>
 
