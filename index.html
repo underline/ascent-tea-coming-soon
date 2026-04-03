@@ -326,10 +326,10 @@
       button.disabled = true;
 
       try {
-        const res = await fetch('https://a.klaviyo.com/client/subscriptions/', {
+        const res = await fetch('https://a.klaviyo.com/client/subscriptions/?company_id=' + KLAVIYO_COMPANY_ID, {
           method: 'POST',
           headers: {
-            'Content-Type': 'application/json',
+            'Content-Type': 'application/vnd.api+json',
             'revision': '2024-10-15'
           },
           body: JSON.stringify({
