@@ -52,6 +52,9 @@
       height: 100%;
       object-fit: cover;
       object-position: center 40%;
+      pointer-events: none;
+      -webkit-user-drag: none;
+      user-select: none;
     }
 
     .hero-overlay {
@@ -210,10 +213,10 @@
 
     .signup-note {
       font-size: 0.7rem;
-      color: rgba(35, 35, 25, 0.5);
+      color: rgba(35, 35, 25, 0.85);
       margin-top: 0.75rem;
       letter-spacing: 0.02em;
-      text-shadow: 0 1px 3px rgba(255, 255, 255, 0.4);
+      text-shadow: 0 1px 4px rgba(255, 255, 255, 0.7), 0 0 8px rgba(255, 255, 255, 0.5);
       animation: fadeIn 1s 1.1s ease-out both;
     }
 
