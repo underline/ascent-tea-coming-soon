@@ -3,10 +3,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Ascent Tea — Premium Japanese Matcha</title>
-  <meta name="description" content="Ceremonial-grade Japanese matcha in single-serve stick packs. Drop 01 coming soon.">
-  <meta property="og:title" content="Ascent Tea — Premium Japanese Matcha">
-  <meta property="og:description" content="Ceremonial-grade Japanese matcha in single-serve stick packs. Drop 01 coming soon.">
+  <title>Ascent Tea — Japanese Matcha Kits</title>
+  <meta name="description" content="Ceremonial-grade Japanese matcha paired with kinako and monk fruit sweetener. Our first kit launches soon.">
+  <meta property="og:title" content="Ascent Tea — Japanese Matcha Kits">
+  <meta property="og:description" content="Ceremonial-grade Japanese matcha paired with kinako and monk fruit sweetener. Our first kit launches soon.">
   <meta property="og:image" content="https://ascenttea.com/hero.jpg">
   <meta property="og:url" content="https://ascenttea.com">
   <meta property="og:type" content="website">
@@ -19,10 +19,8 @@
     *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
 
     :root {
-      --color-matcha: #2D5016;
-      --color-sage: #8B9E7C;
+      --color-matcha: #4A6741;
       --color-cream: #FAF7F2;
-      --color-cream-dark: #F0EBE3;
       --color-charcoal: #2C2C2C;
       --color-gold: #C4A265;
       --font-heading: 'Cormorant Garamond', 'Palatino', serif;
@@ -53,7 +51,6 @@
       object-fit: cover;
       object-position: center 40%;
       pointer-events: none;
-      -webkit-user-drag: none;
       user-select: none;
     }
 
@@ -62,10 +59,9 @@
       inset: 0;
       background: linear-gradient(
         to bottom,
-        rgba(255, 255, 255, 0.15) 0%,
-        rgba(255, 255, 255, 0.25) 40%,
-        rgba(255, 255, 255, 0.15) 70%,
-        rgba(0, 0, 0, 0.1) 100%
+        rgba(250, 247, 242, 0.45) 0%,
+        rgba(250, 247, 242, 0.25) 50%,
+        rgba(0, 0, 0, 0.08) 100%
       );
     }
 
@@ -85,56 +81,44 @@
     }
 
     .logo {
-      width: clamp(280px, 40vw, 500px);
+      width: clamp(240px, 36vw, 420px);
       height: auto;
-      margin-bottom: 2rem;
-      filter: drop-shadow(0 1px 4px rgba(255, 255, 255, 0.4));
+      margin-bottom: 1.75rem;
+      filter: drop-shadow(0 1px 6px rgba(255, 255, 255, 0.5));
       animation: fadeDown 1s ease-out both;
     }
 
     .subtitle {
       font-family: var(--font-body);
-      font-size: clamp(0.85rem, 1.5vw, 1.1rem);
+      font-size: clamp(0.8rem, 1.3vw, 1rem);
       font-weight: 400;
       letter-spacing: 0.2em;
       text-transform: uppercase;
       color: rgba(35, 35, 25, 0.85);
-      margin-bottom: 0.4rem;
       text-shadow: 0 1px 4px rgba(255, 255, 255, 0.5);
       animation: fadeIn 1s 0.3s ease-out both;
     }
 
     .flavors {
       font-family: var(--font-body);
-      font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+      font-size: clamp(0.7rem, 1.1vw, 0.85rem);
       font-weight: 300;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: rgba(35, 35, 25, 0.7);
-      margin-bottom: 2.5rem;
+      color: rgba(35, 35, 25, 0.65);
+      margin-top: 0.35rem;
+      margin-bottom: 1.75rem;
       text-shadow: 0 1px 4px rgba(255, 255, 255, 0.5);
       animation: fadeIn 1s 0.5s ease-out both;
     }
 
-    .coming-soon {
-      font-family: var(--font-heading);
-      font-size: clamp(2.4rem, 6vw, 4.5rem);
-      font-weight: 300;
-      letter-spacing: 0.06em;
-      line-height: 1.1;
-      color: var(--color-charcoal);
-      margin-bottom: 1.25rem;
-      text-shadow: 0 1px 6px rgba(255, 255, 255, 0.5);
-      animation: fadeUp 1s 0.2s ease-out both;
-    }
-
-    .drop-label {
+    /* ---- Liquid glass pill ---- */
+    .limited-pill {
       font-family: var(--font-body);
-      font-size: 0.75rem;
+      font-size: 0.72rem;
       font-weight: 500;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.1em;
       color: rgba(35, 35, 25, 0.88);
-      margin-bottom: 2.5rem;
       position: relative;
       background: linear-gradient(
         160deg,
@@ -144,90 +128,152 @@
       );
       backdrop-filter: blur(24px) saturate(1.8) brightness(1.08);
       -webkit-backdrop-filter: blur(24px) saturate(1.8) brightness(1.08);
-      padding: 0.5rem 1.25rem;
-      border-radius: 2rem;
+      padding: 0.5rem 1.4rem;
+      border-radius: 100px;
       display: inline-block;
       white-space: nowrap;
       border: 0.5px solid rgba(255, 255, 255, 0.5);
       border-top-color: rgba(255, 255, 255, 0.7);
       border-left-color: rgba(255, 255, 255, 0.6);
+      margin-bottom: 1.75rem;
       animation: fadeIn 1s 0.7s ease-out both;
+      overflow: hidden;
     }
 
-    /* ---- Email signup ---- */
+    .limited-pill::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: inherit;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.65) 0%,
+        rgba(255, 255, 255, 0.15) 60%,
+        transparent 100%
+      );
+      border-radius: 2rem 2rem 50% 50%;
+      pointer-events: none;
+    }
+
+    /* ---- Signup pill (matches main site) ---- */
     .signup {
-      display: flex;
-      gap: 0;
       max-width: 440px;
       width: 100%;
+      display: flex;
+      flex-direction: column;
+      gap: 0.625rem;
       animation: fadeUp 1s 0.9s ease-out both;
+    }
+
+    .signup input,
+    .signup button {
+      box-sizing: border-box;
+      height: 48px;
+      min-height: 48px;
+      margin: 0;
+      line-height: 1;
+      width: 100%;
     }
 
     .signup input {
       flex: 1;
-      padding: 0.85rem 1.2rem;
-      font-family: var(--font-body);
-      font-size: 0.85rem;
-      letter-spacing: 0.03em;
+      min-width: 0;
+      padding: 0 1.25rem;
       color: var(--color-charcoal);
-      background: rgba(255, 255, 255, 0.7);
-      backdrop-filter: blur(16px);
-      -webkit-backdrop-filter: blur(16px);
-      border: 0.5px solid rgba(50, 50, 40, 0.12);
-      border-right: none;
-      border-radius: 2px 0 0 2px;
+      font-size: 0.85rem;
+      font-family: var(--font-body);
+      letter-spacing: 0.03em;
       outline: none;
       transition: all 0.3s ease;
+      background: rgba(255, 255, 255, 0.82);
+      backdrop-filter: blur(16px) saturate(1.4);
+      -webkit-backdrop-filter: blur(16px) saturate(1.4);
+      border-radius: 100px;
+      border: 1px solid rgba(255, 255, 255, 0.6);
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.04);
     }
 
     .signup input::placeholder {
       color: rgba(50, 50, 40, 0.38);
-      letter-spacing: 0.04em;
+      font-weight: 400;
     }
 
     .signup input:focus {
-      background: rgba(255, 255, 255, 0.85);
       border-color: rgba(50, 50, 40, 0.2);
     }
 
     .signup button {
-      padding: 0.85rem 1.8rem;
+      padding: 0 2rem;
+      background: var(--color-matcha);
+      color: #fff;
       font-family: var(--font-body);
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       font-weight: 500;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: var(--color-cream);
-      background: var(--color-charcoal);
-      border: 1px solid var(--color-charcoal);
-      border-radius: 0 2px 2px 0;
+      border: none;
+      border-radius: 100px;
       cursor: pointer;
       transition: all 0.3s ease;
       white-space: nowrap;
     }
 
     .signup button:hover {
-      background: var(--color-matcha);
-      border-color: var(--color-matcha);
+      background: var(--color-charcoal);
+    }
+
+    /* Desktop: unified pill */
+    @media (min-width: 560px) {
+      .signup {
+        padding: 5px;
+        flex-direction: row;
+        gap: 0;
+        background: rgba(255, 255, 255, 0.82);
+        backdrop-filter: blur(16px) saturate(1.4);
+        -webkit-backdrop-filter: blur(16px) saturate(1.4);
+        border-radius: 100px;
+        border: 1px solid rgba(255, 255, 255, 0.6);
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06), 0 4px 16px rgba(0, 0, 0, 0.04);
+      }
+
+      .signup input {
+        background: transparent;
+        backdrop-filter: none;
+        -webkit-backdrop-filter: none;
+        border: none;
+        border-radius: 100px 0 0 100px;
+        box-shadow: none;
+        padding: 0 0 0 1.25rem;
+        height: 38px;
+        min-height: 38px;
+        width: auto;
+      }
+
+      .signup input:focus {
+        border-color: transparent;
+      }
+
+      .signup button {
+        height: 38px;
+        min-height: 38px;
+        width: auto;
+        flex-shrink: 0;
+      }
     }
 
     .signup-note {
-      font-size: 0.7rem;
-      color: rgba(35, 35, 25, 0.8);
+      font-size: 0.68rem;
+      color: rgba(35, 35, 25, 0.65);
       margin-top: 0.75rem;
       letter-spacing: 0.03em;
-      background: rgba(255, 255, 255, 0.45);
-      backdrop-filter: blur(12px);
-      -webkit-backdrop-filter: blur(12px);
-      padding: 0.35rem 0.9rem;
-      border-radius: 1rem;
+      text-shadow: 0 1px 3px rgba(255, 255, 255, 0.4);
       animation: fadeIn 1s 1.1s ease-out both;
     }
 
     /* ---- Instagram link ---- */
     .social {
       position: fixed;
-      bottom: 2rem;
+      bottom: 1.5rem;
       left: 50%;
       transform: translateX(-50%);
       z-index: 2;
@@ -237,40 +283,30 @@
     .social a {
       display: inline-flex;
       align-items: center;
-      gap: 0.6rem;
-      color: rgba(35, 35, 25, 0.85);
+      gap: 0.5rem;
+      color: rgba(35, 35, 25, 0.75);
       text-decoration: none;
       font-family: var(--font-body);
-      font-size: 0.8rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      background: rgba(255, 255, 255, 0.5);
+      font-size: 0.72rem;
+      font-weight: 400;
+      letter-spacing: 0.06em;
+      background: rgba(255, 255, 255, 0.4);
       backdrop-filter: blur(12px);
       -webkit-backdrop-filter: blur(12px);
-      padding: 0.5rem 1.1rem;
-      border-radius: 2rem;
+      padding: 0.4rem 1rem;
+      border-radius: 100px;
+      border: 0.5px solid rgba(255, 255, 255, 0.3);
       transition: all 0.3s ease;
     }
 
     .social a:hover {
-      background: rgba(255, 255, 255, 0.7);
+      background: rgba(255, 255, 255, 0.65);
       color: var(--color-charcoal);
     }
 
     .social svg {
-      width: 20px;
-      height: 20px;
-    }
-
-    .ig-gradient {
-      background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #285AEB 90%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-    }
-
-    .social svg.ig-icon {
-      fill: url(#ig-grad);
+      width: 16px;
+      height: 16px;
     }
 
     /* ---- Animations ---- */
@@ -289,19 +325,14 @@
       to { opacity: 1; transform: translateY(0); }
     }
 
-    /* ---- Mobile ---- */
-    @media (max-width: 520px) {
+    /* ---- Mobile adjustments ---- */
+    @media (max-width: 559px) {
+      .content {
+        padding: 2rem 1.5rem;
+      }
+
       .signup {
-        flex-direction: column;
-        gap: 0;
-      }
-      .signup input {
-        border-right: 0.5px solid rgba(50, 50, 40, 0.12);
-        border-radius: 2px 2px 0 0;
-        border-bottom: none;
-      }
-      .signup button {
-        border-radius: 0 0 2px 2px;
+        padding: 0 0.5rem;
       }
     }
   </style>
@@ -314,11 +345,10 @@
   </div>
 
   <main class="content">
-    <img src="logo-dark.png" alt="Ascent Tea" class="logo">
+    <img src="logo.png" alt="Ascent Tea" class="logo">
     <p class="subtitle">Drop 01</p>
     <p class="flavors">Kinako · Monk Fruit · Matcha</p>
-    <h1 class="coming-soon">Coming Soon</h1>
-    <p class="drop-label">Limited to 200 kits · Join our first drop</p>
+    <p class="limited-pill">Limited to 200 kits · Launching soon</p>
     <form class="signup" action="#" onsubmit="return handleSignup(event)">
       <input type="email" name="email" placeholder="Your email address" required autocomplete="email">
       <button type="submit">Join the First Drop</button>
@@ -328,16 +358,7 @@
 
   <div class="social">
     <a href="https://instagram.com/ascent_tea" target="_blank" rel="noopener">
-      <svg class="ig-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-        <defs>
-          <linearGradient id="ig-grad" x1="0%" y1="100%" x2="100%" y2="0%">
-            <stop offset="0%" stop-color="#feda75"/>
-            <stop offset="20%" stop-color="#fa7e1e"/>
-            <stop offset="40%" stop-color="#d62976"/>
-            <stop offset="60%" stop-color="#962fbf"/>
-            <stop offset="100%" stop-color="#4f5bd5"/>
-          </linearGradient>
-        </defs>
+      <svg viewBox="0 0 24 24" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
         <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/>
       </svg>
       @ascent_tea
@@ -386,9 +407,8 @@
         });
 
         if (res.ok || res.status === 202) {
-          button.textContent = 'You\'re In';
+          button.textContent = "You're In";
           button.style.background = '#2D5016';
-          button.style.borderColor = '#2D5016';
           input.disabled = true;
         } else {
           throw new Error('API error');
@@ -396,8 +416,6 @@
       } catch (err) {
         button.textContent = 'Try Again';
         button.disabled = false;
-        button.style.background = '#8B4513';
-        button.style.borderColor = '#8B4513';
       }
     }
   </script>
