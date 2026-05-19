@@ -237,30 +237,6 @@
       object-fit: cover;
     }
 
-    .hero-kit-pop {
-      position: absolute;
-      top: -10px;
-      right: -10px;
-      font-family: var(--font-accent);
-      font-size: 0.85rem;
-      color: var(--color-white);
-      padding: 0.35rem 0.65rem;
-      transform: rotate(6deg);
-      z-index: 2;
-      line-height: 1.2;
-      pointer-events: none;
-    }
-
-    .hero-kit-pop::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: var(--color-ichigo);
-      filter: url(#washi-edge-sm);
-      box-shadow: 1px 2px 6px rgba(0,0,0,0.12);
-      z-index: -1;
-    }
-
     .hero-kit-info {
       padding: 0.7rem 0.85rem;
       display: flex;
@@ -284,17 +260,21 @@
       letter-spacing: 0.01em;
     }
 
-    /* ---- COMING SOON OVERLAY on kit cards ---- */
+    /* ---- COMING SOON OVERLAY spanning all kit cards ---- */
+    .coming-soon-wrap {
+      position: relative;
+    }
+
     .coming-soon-overlay {
       position: absolute;
-      inset: 0;
+      inset: -8px -12px;
       z-index: 5;
       display: flex;
       align-items: center;
       justify-content: center;
-      background: rgba(250, 247, 242, 0.55);
-      backdrop-filter: blur(2px);
-      -webkit-backdrop-filter: blur(2px);
+      background: rgba(250, 247, 242, 0.5);
+      backdrop-filter: blur(3px);
+      -webkit-backdrop-filter: blur(3px);
       border-radius: var(--radius-base);
     }
 
@@ -303,18 +283,18 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      padding: 0.6rem 1rem;
+      padding: 0.8rem 1.5rem;
     }
 
     /* Thumbtack */
     .coming-soon-sign::before {
       content: '';
       position: absolute;
-      top: -8px;
+      top: -10px;
       left: 50%;
       transform: translateX(-50%);
-      width: 14px;
-      height: 14px;
+      width: 18px;
+      height: 18px;
       background: radial-gradient(circle at 40% 35%, #e04040, #b22828);
       border-radius: 50%;
       box-shadow: 0 2px 4px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.3);
@@ -323,14 +303,14 @@
 
     .coming-soon-label {
       font-family: var(--font-accent);
-      font-size: 0.75rem;
-      letter-spacing: 0.08em;
+      font-size: 1.1rem;
+      letter-spacing: 0.1em;
       text-transform: uppercase;
       color: var(--text-primary);
       background: var(--color-cream);
-      padding: 0.35rem 0.75rem;
+      padding: 0.5rem 1.5rem;
       border: 1px solid var(--border-strong);
-      box-shadow: 1px 2px 6px rgba(0,0,0,0.1);
+      box-shadow: 2px 3px 10px rgba(0,0,0,0.12);
       transform: rotate(-2deg);
       white-space: nowrap;
     }
@@ -692,51 +672,42 @@
         <span>Pure Matcha</span>
       </div>
 
-      <!-- Product kit cards with Coming Soon overlay -->
-      <div class="hero-kits">
-        <div class="hero-kit-card">
-          <div class="coming-soon-overlay">
-            <div class="coming-soon-sign">
-              <span class="coming-soon-label">Coming Soon</span>
+      <!-- Product kit cards with single Coming Soon overlay -->
+      <div class="coming-soon-wrap">
+        <div class="hero-kits">
+          <div class="hero-kit-card">
+            <div class="hero-kit-img-wrap">
+              <img src="kit-box-mixed.webp" alt="Mixed Discovery Box">
+            </div>
+            <div class="hero-kit-info">
+              <span class="hero-kit-name">Mixed Box</span>
+              <span class="hero-kit-meta">$25 &middot; 10 servings</span>
             </div>
           </div>
-          <div class="hero-kit-img-wrap">
-            <img src="kit-box-mixed.webp" alt="Mixed Discovery Box">
+
+          <div class="hero-kit-card">
+            <div class="hero-kit-img-wrap">
+              <img src="kit-box-strawberry.webp" alt="Strawberry Matcha Box">
+            </div>
+            <div class="hero-kit-info">
+              <span class="hero-kit-name">Strawberry Matcha</span>
+              <span class="hero-kit-meta">$25 &middot; 10 servings</span>
+            </div>
           </div>
-          <div class="hero-kit-info">
-            <span class="hero-kit-name">Mixed Box</span>
-            <span class="hero-kit-meta">$25 &middot; 10 servings</span>
+
+          <div class="hero-kit-card">
+            <div class="hero-kit-img-wrap">
+              <img src="kit-box-pure-matcha.webp" alt="Pure Matcha Box">
+            </div>
+            <div class="hero-kit-info">
+              <span class="hero-kit-name">Pure Matcha</span>
+              <span class="hero-kit-meta">$25 &middot; 10 servings</span>
+            </div>
           </div>
         </div>
-
-        <div class="hero-kit-card">
-          <span class="hero-kit-pop">Sweet!</span>
-          <div class="coming-soon-overlay">
-            <div class="coming-soon-sign">
-              <span class="coming-soon-label">Coming Soon</span>
-            </div>
-          </div>
-          <div class="hero-kit-img-wrap">
-            <img src="kit-box-strawberry.webp" alt="Strawberry Matcha Box">
-          </div>
-          <div class="hero-kit-info">
-            <span class="hero-kit-name">Strawberry Matcha</span>
-            <span class="hero-kit-meta">$25 &middot; 10 servings</span>
-          </div>
-        </div>
-
-        <div class="hero-kit-card">
-          <div class="coming-soon-overlay">
-            <div class="coming-soon-sign">
-              <span class="coming-soon-label">Coming Soon</span>
-            </div>
-          </div>
-          <div class="hero-kit-img-wrap">
-            <img src="kit-box-pure-matcha.webp" alt="Pure Matcha Box">
-          </div>
-          <div class="hero-kit-info">
-            <span class="hero-kit-name">Pure Matcha</span>
-            <span class="hero-kit-meta">$25 &middot; 10 servings</span>
+        <div class="coming-soon-overlay">
+          <div class="coming-soon-sign">
+            <span class="coming-soon-label">Coming Soon</span>
           </div>
         </div>
       </div>
