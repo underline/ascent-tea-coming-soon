@@ -298,7 +298,13 @@
       padding-top: 50px;
     }
 
-    /* String - rotated square with two borders forming a V */
+    /* String - rotated square with two borders forming a V
+       Geometry: 55x55 square rotated -45deg.
+       Left/right corners (V endpoints) are at center_y of the square.
+       Apex (top corner) is at center_y - side*sqrt(2)/2 = center - 38.9px.
+       We need the V endpoints to touch the label top (~47px from sign top).
+       So center_y = 47, top = 47 - 27.5 = 19.5px.
+       Apex = 47 - 38.9 = 8.1px. */
     .coming-soon-sign::before {
       position: absolute;
       content: "";
@@ -307,7 +313,7 @@
       border-left: none;
       width: 55px;
       height: 55px;
-      top: 9px;
+      top: 19px;
       left: 50%;
       margin-left: -27.5px;
       transform: rotate(-45deg);
@@ -315,14 +321,14 @@
       z-index: 1;
     }
 
-    /* Thumbtack pin at the apex */
+    /* Thumbtack pin at the apex (sits at the V apex ~8px from sign top) */
     .coming-soon-sign::after {
       position: absolute;
       content: "";
       width: 12px;
       height: 12px;
       border-radius: 50%;
-      top: 0;
+      top: 3px;
       left: 50%;
       margin-left: -6px;
       background: radial-gradient(circle at 40% 35%, #e04040, #b22828);
