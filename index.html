@@ -296,6 +296,8 @@
       align-items: center;
       /* Space for string + pin above the label */
       padding-top: 50px;
+      /* Rotate the whole assembly so string meets label cleanly */
+      transform: rotate(-2deg);
     }
 
     /* String - rotated square with two borders forming a V
@@ -346,7 +348,6 @@
       padding: 0.4rem 1.1rem;
       border: 1px solid var(--border-strong);
       box-shadow: 1px 2px 6px rgba(0,0,0,0.1);
-      transform: rotate(-2deg);
       white-space: nowrap;
     }
 
