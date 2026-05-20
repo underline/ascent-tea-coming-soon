@@ -293,27 +293,39 @@
       display: flex;
       flex-direction: column;
       align-items: center;
+      margin-top: 30px;
     }
 
-    /* Thumbtack - sits at top center */
-    .coming-soon-pin {
-      position: relative;
+    /* String - rotated square with two borders forming a V */
+    .coming-soon-sign::before {
+      position: absolute;
+      content: "";
+      border: 1.5px solid #8a7e72;
+      border-bottom: none;
+      border-left: none;
+      width: 60px;
+      height: 60px;
+      top: -38px;
+      left: 50%;
+      margin-left: -30px;
+      transform: rotate(-45deg);
+      border-radius: 0 4px 0 0;
+      z-index: 1;
+    }
+
+    /* Thumbtack pin at the apex */
+    .coming-soon-sign::after {
+      position: absolute;
+      content: "";
       width: 12px;
       height: 12px;
-      background: radial-gradient(circle at 40% 35%, #e04040, #b22828);
       border-radius: 50%;
+      top: -48px;
+      left: 50%;
+      margin-left: -6px;
+      background: radial-gradient(circle at 40% 35%, #e04040, #b22828);
       box-shadow: 0 2px 4px rgba(0,0,0,0.3), inset 0 1px 2px rgba(255,255,255,0.3);
       z-index: 3;
-      flex-shrink: 0;
-    }
-
-    /* SVG string - catenary curve from left to right through pin */
-    .coming-soon-string {
-      display: block;
-      width: 120px;
-      height: 20px;
-      margin-top: -6px;
-      margin-bottom: -2px;
     }
 
     .coming-soon-label {
@@ -720,10 +732,6 @@
         </div>
         <div class="coming-soon-overlay">
           <div class="coming-soon-sign">
-            <span class="coming-soon-pin"></span>
-            <svg class="coming-soon-string" viewBox="0 0 120 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M 10 0 Q 60 28 110 0" stroke="#8a7e72" stroke-width="1" fill="none"/>
-            </svg>
             <span class="coming-soon-label">Coming Soon</span>
           </div>
         </div>
