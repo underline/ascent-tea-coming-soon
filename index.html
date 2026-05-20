@@ -274,6 +274,7 @@
       position: relative;
       width: fit-content;
       margin-bottom: 1.75rem;
+      animation: fadeUp 0.8s 0.4s ease-out both;
     }
 
     .coming-soon-overlay {
@@ -617,6 +618,32 @@
       from { opacity: 0; transform: translateY(14px); }
       to { opacity: 1; transform: translateY(0); }
     }
+
+    @keyframes fadeIn {
+      from { opacity: 0; }
+      to { opacity: 1; }
+    }
+
+    @keyframes fadeInScale {
+      from { opacity: 0; transform: scale(0.92); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Pinboard fade-ins */
+    .washi-main {
+      animation: fadeIn 0.8s 0.3s ease-out both;
+    }
+
+    .washi-r1  { animation: fadeIn 0.6s 0.5s ease-out both; }
+    .washi-r2  { animation: fadeIn 0.6s 0.6s ease-out both; }
+    .washi-r3  { animation: fadeIn 0.6s 0.7s ease-out both; }
+    .washi-r4  { animation: fadeIn 0.6s 0.8s ease-out both; }
+    .washi-r5  { animation: fadeIn 0.6s 0.65s ease-out both; }
+    .washi-r6  { animation: fadeIn 0.6s 0.9s ease-out both; }
+    .washi-r7  { animation: fadeIn 0.6s 0.85s ease-out both; }
+    .washi-r8  { animation: fadeIn 0.6s 0.95s ease-out both; }
+    .washi-r9  { animation: fadeIn 0.6s 0.75s ease-out both; }
+    .washi-r10 { animation: fadeIn 0.6s 1.0s ease-out both; }
 
     /* ---- MOBILE ---- */
     @media (max-width: 900px) {
