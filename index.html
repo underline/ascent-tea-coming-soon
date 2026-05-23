@@ -648,7 +648,7 @@
 
     /* ---- MOBILE ---- */
     @media (max-width: 900px) {
-      body { overflow-x: hidden; overflow-y: auto; }
+      body { overflow-x: hidden; overflow-y: auto !important; }
 
       .hero {
         grid-template-columns: 1fr;
@@ -663,10 +663,11 @@
         padding: 2.5rem 1.25rem;
       }
       .washi-main {
-        width: 70%;
+        width: 65%;
+        max-width: 280px;
         min-width: 200px;
-        font-size: 0.88em;
-        padding: 1.6rem 2rem;
+        font-size: 0.82em;
+        padding: 1.4rem 1.6rem;
       }
       /* Hide most notes on mobile - keep 4, one per corner, peeking from edges */
       .washi-r3, .washi-r4, .washi-r5, .washi-r7, .washi-r8, .washi-r9 {
@@ -708,7 +709,6 @@
 
       .coming-soon-wrap {
         width: 100%;
-        overflow: hidden;
       }
 
       .hero-kits {
