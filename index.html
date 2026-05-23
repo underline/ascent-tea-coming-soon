@@ -658,8 +658,24 @@
       }
 
       .hero-pinboard {
-        height: 50vh;
+        height: auto;
+        min-height: 480px;
+        padding: 2.5rem 1.25rem;
       }
+      .washi-main {
+        width: 70%;
+        min-width: 200px;
+        font-size: 0.88em;
+        padding: 1.6rem 2rem;
+      }
+      /* Hide most notes on mobile - keep 4, one per corner, peeking from edges */
+      .washi-r3, .washi-r4, .washi-r5, .washi-r7, .washi-r8, .washi-r9 {
+        display: none;
+      }
+      .washi-r1  { top: -3%; left: -40%; }
+      .washi-r2  { top: -2%; right: -40%; left: auto; }
+      .washi-r6  { bottom: -3%; left: -40%; }
+      .washi-r10 { top: auto; bottom: -2%; right: -40%; left: auto; }
 
       .hero-text {
         padding: 2.5rem 2rem 6rem;
