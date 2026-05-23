@@ -648,7 +648,7 @@
 
     /* ---- MOBILE ---- */
     @media (max-width: 900px) {
-      body { overflow: auto; }
+      body { overflow-x: hidden; overflow-y: auto; }
 
       .hero {
         grid-template-columns: 1fr;
@@ -704,6 +704,11 @@
     @media (max-width: 480px) {
       .hero-text {
         padding: 2rem 1.5rem 5rem;
+      }
+
+      .coming-soon-wrap {
+        width: 100%;
+        overflow: hidden;
       }
 
       .hero-kits {
