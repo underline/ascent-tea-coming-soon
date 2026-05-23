@@ -648,42 +648,26 @@
 
     /* ---- MOBILE ---- */
     @media (max-width: 900px) {
+      body { overflow-x: hidden; overflow-y: auto; }
+
       .hero {
         grid-template-columns: 1fr;
-        height: 100vh;
-        height: 100dvh;
-        grid-template-rows: 58% 42%;
+        height: auto;
       }
 
       .hero-text {
-        padding: 1.25rem 1.5rem 1rem;
-        overflow: hidden;
-      }
-      .hero-heading {
-        font-size: 1.8rem;
-        margin-bottom: 0.25rem;
-      }
-      .hero-heading-accent {
-        font-size: 1.8rem;
-        margin-bottom: 0.75rem;
-      }
-      .hero-desc {
-        font-size: 0.95rem;
-        margin-bottom: 0.75rem;
-      }
-      .signup-prompt {
-        margin-bottom: 0.4rem;
+        padding: 2rem 2rem 2rem;
       }
 
       .hero-pinboard {
-        padding: 2rem 1.25rem;
+        min-height: 420px;
+        padding: 2.5rem 1.25rem;
       }
       .washi-main {
-        width: 65%;
-        max-width: 280px;
+        width: 70%;
         min-width: 200px;
-        font-size: 0.82em;
-        padding: 1.4rem 1.6rem;
+        font-size: 0.88em;
+        padding: 1.6rem 2rem;
       }
       /* Hide most notes on mobile - keep 4, one per corner, peeking from edges */
       .washi-r3, .washi-r4, .washi-r5, .washi-r7, .washi-r8, .washi-r9 {
@@ -694,7 +678,7 @@
       .washi-r6  { bottom: -3%; left: -40%; }
       .washi-r10 { top: auto; bottom: -2%; right: -40%; left: auto; }
 
-      /* Carousel: horizontal scroll, no body scroll */
+      /* Carousel: horizontal scroll */
       .hero-kits {
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -708,29 +692,19 @@
         display: none;
       }
       .hero-kit-card {
-        width: 38%;
+        width: 44%;
         flex-shrink: 0;
         scroll-snap-align: start;
       }
-      .hero-kit-img-wrap {
-        aspect-ratio: 1;
-      }
-      .hero-kit-info {
-        padding: 0.4rem 0.5rem;
-      }
-      .hero-kit-name {
-        font-size: 0.75rem;
-      }
-      .hero-kit-meta {
-        font-size: 0.65rem;
-      }
-
       .signup-form {
         flex-direction: column;
       }
 
       footer {
-        display: none;
+        position: relative;
+        padding: 1.25rem 2rem;
+        flex-direction: column;
+        gap: 0.5rem;
       }
     }
   </style>
